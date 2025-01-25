@@ -272,14 +272,14 @@
                        class="selectgroup">
                     <input type="radio" name="item" :value="item.id" v-model="itemSelected">
                     <div class="selectgroup-label d-flex flex-column">
-                        <div style="line-height: 1; opacity: .7; margin-bottom: .1rem;" class="d-flex align-items-center">
+                        <div style="margin-bottom: .1rem;" class="d-flex align-items-center">
                             <transition name="indicator">
                                 <span class="icon icon-small mr-1" v-if="item.status=='unread'">{% inline "circle-full.svg" %}</span>
                                 <span class="icon icon-small mr-1" v-if="item.status=='starred'">{% inline "star-full.svg" %}</span>
                             </transition>
-                            <small class="flex-fill text-truncate mr-1">
+                            <b class="flex-fill text-truncate mr-1">
                                 {{ (feedsById[item.feed_id] || {}).title }}
-                            </small>
+                            </b>
                             <small class="flex-shrink-0"><relative-time v-bind:title="formatDate(item.date)" :val="item.date"/></small>
                         </div>
                         <div style="margin-bottom: 0.1rem;">{{ item.title || 'untitled' }}</div>
