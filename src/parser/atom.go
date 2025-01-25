@@ -96,7 +96,7 @@ func ParseAtom(r io.Reader) (*Feed, error) {
 			URL:      link,
 			Title:    srcitem.Title.Text(),
 			Content:  firstNonEmpty(srcitem.Content.String(), srcitem.Summary.String(), srcitem.firstMediaDescription()),
-			ImageURL: srcitem.firstMediaThumbnail(),
+			ImageURL: FallbackOpenGraph(srcitem.firstMediaThumbnail(), link, "image"),
 			AudioURL: "",
 		})
 	}
