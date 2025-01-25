@@ -1,3 +1,11 @@
+# nadiamoe/yarr
+
+This is a tiny fork of [yarr](https://github.com/nkanaev/yarr) that tweaks it to my personal tastes. For a list of changes, see the git log.
+
+Original readme follows.
+
+---
+
 # yarr
 
 **yarr** (yet another rss reader) is a web-based feed aggregator which can be used both
