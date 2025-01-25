@@ -282,7 +282,10 @@
                             </small>
                             <small class="flex-shrink-0"><relative-time v-bind:title="formatDate(item.date)" :val="item.date"/></small>
                         </div>
-                        <div>{{ item.title || 'untitled' }}</div>
+                        <div style="margin-bottom: 0.1rem;">{{ item.title || 'untitled' }}</div>
+                        <div v-if="item.image">
+                          <img :src="item.image" loading="lazy" referrerpolicy="no-referrer" style="width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover;">
+                        </div>
                     </div>
                 </label>
                 <button class="btn btn-link btn-block loading my-3" v-if="itemsHasMore"></button>
