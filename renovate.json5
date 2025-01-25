@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommitsDisabled",
+  ],
+  // This is a fork, we do not want to diverge too much. Upgrade only container images and ci/cd pipelines.
+  "gomod": {
+    "enabled": false,
+  },
+  "packageRules": [
+    // Group all GitHub actions updates in the same PR.
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions",
+    },
+  ],
+}
+
