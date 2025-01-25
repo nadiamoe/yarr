@@ -91,14 +91,15 @@ func ParseRSS(r io.Reader) (*Feed, error) {
 			permalink = srcitem.GUID.GUID
 		}
 
+		link := firstNonEmpty(srcitem.OrigLink, srcitem.Link, permalink)
 		dstfeed.Items = append(dstfeed.Items, Item{
 			GUID:     firstNonEmpty(srcitem.GUID.GUID, srcitem.Link),
 			Date:     dateParse(firstNonEmpty(srcitem.DublinCoreDate, srcitem.PubDate)),
-			URL:      firstNonEmpty(srcitem.OrigLink, srcitem.Link, permalink),
+			URL:      link,
 			Title:    srcitem.Title,
 			Content:  firstNonEmpty(srcitem.ContentEncoded, srcitem.Description),
 			AudioURL: podcastURL,
-			ImageURL: srcitem.firstMediaThumbnail(),
+			ImageURL: FallbackOpenGraph(srcitem.firstMediaThumbnail(), link, "image"),
 		})
 	}
 	return dstfeed, nil
