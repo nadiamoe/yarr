@@ -85,6 +85,8 @@ var keybindings = {
   "h": shortcutFunctions.previousFeed,
   "f": shortcutFunctions.scrollForward,
   "b": shortcutFunctions.scrollBackward,
+  "m": shortcutFunctions.scrollForward, // Key below J.
+  ",": shortcutFunctions.scrollBackward, // Key below k.
   "1": shortcutFunctions.showUnread,
   "2": shortcutFunctions.showStarred,
   "3": shortcutFunctions.showAll,
