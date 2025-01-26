@@ -55,10 +55,10 @@ var shortcutFunctions = {
     vm.navigateToFeed(-1)
   },
   scrollForward: function() {
-    helperFunctions.scrollContent(+1)
+    helperFunctions.scrollContent(+0.6)
   },
   scrollBackward: function() {
-    helperFunctions.scrollContent(-1)
+    helperFunctions.scrollContent(-0.6)
   },
   showAll() {
     vm.filterSelected = ''
