@@ -349,7 +349,11 @@
                  :class="{'font-serif': theme.font == 'serif', 'font-monospace': theme.font == 'monospace'}"
                  :style="{'font-size': theme.size + 'rem'}">
                 <div class="content-wrapper">
-                    <h1><b>{{ itemSelectedDetails.title || 'untitled' }}</b></h1>
+                    <h1>
+                      <a referrerpolicy="no-referrer" target="_blank" :href="itemSelectedDetails.link" style="text-decoration: none;">
+                        <b>{{ itemSelectedDetails.title || 'untitled' }}</b>
+                      </a>
+                    </h1>
                     <div class="text-muted">
                         <div>
                             <span class="cursor-pointer" @click="feedSelected = 'feed:'+(feedsById[itemSelectedDetails.feed_id] || {}).id">
