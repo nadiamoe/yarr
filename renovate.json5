@@ -1,9 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":dependencyDashboard",
-    ":semanticCommitsDisabled",
+    "github>nadiamoe/renovate-config",
   ],
   // This is a fork, we do not want to diverge too much. Upgrade only container images and ci/cd pipelines.
   "gomod": {
@@ -17,4 +15,3 @@
     },
   ],
 }
-
