@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine AS build
+FROM golang:1.23-alpine@sha256:e438c135c348bd7677fde18d1576c2f57f265d5dfa1a6b26fca975d4aa40b3bb AS build
 RUN apk add build-base git
 WORKDIR /src
 COPY . .
@@ -7,7 +7,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build --mount=type=cache,target=/r
   CGO_CFLAGS="-D_LARGEFILE64_SOURCE" \
   make build_linux
 
-FROM alpine:3.21.2
+FROM alpine:3.21.2@sha256:56fa17d2a7e7f168a043a2712e63aed1f8543aeafdcee47c58dcffe38ed51099
 RUN apk add --no-cache ca-certificates && \
     update-ca-certificates
 COPY --from=build /src/_output/linux/yarr /usr/local/bin/yarr
