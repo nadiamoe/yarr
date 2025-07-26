@@ -12,9 +12,9 @@ jobs:
     runs-on: macos-13
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - name: Setup Go
-      uses: actions/setup-go@v4
+      uses: actions/setup-go@19bb51245e9c80abacb2e91cc42b33fa478b8639 # v4
       with:
         go-version: '^1.23'
     - name: Build arm64 gui
@@ -47,9 +47,9 @@ jobs:
     runs-on: windows-2022
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - name: Setup Go
-      uses: actions/setup-go@v4
+      uses: actions/setup-go@19bb51245e9c80abacb2e91cc42b33fa478b8639 # v4
       with:
         go-version: '^1.23'
     - name: Build amd64 gui
@@ -71,13 +71,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
     - name: Setup Go
-      uses: actions/setup-go@v4
+      uses: actions/setup-go@19bb51245e9c80abacb2e91cc42b33fa478b8639 # v4
       with:
         go-version: '^1.23'
     - name: Setup Zig
-      uses: mlugg/setup-zig@v1
+      uses: mlugg/setup-zig@53fc45b17fe98b52f92ee5ea08ff48a85a3e7eb7 # v1
       with:
         version: 0.14.0
     - name: Build linux/amd64
@@ -117,7 +117,7 @@ jobs:
     needs: [build_macos, build_windows, build_multi_cli]
     steps:
     - name: Download Artifacts
-      uses: actions/download-artifact@v4.1.7
+      uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
       with:
         path: .
     - name: Preparation
@@ -133,7 +133,7 @@ jobs:
         done
         ls out
     - name: Upload Release
-      uses: softprops/action-gh-release@v2
+      uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
