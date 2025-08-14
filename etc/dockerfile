@@ -1,4 +1,4 @@
-FROM golang:alpine3.21@sha256:50f8a10a46c0c26b5b816a80314f1999196c44c3e3571f41026b061339c29db6 AS build
+FROM golang:alpine3.21@sha256:4f3d3b4f50212b3753fa50fb388edcc3226547346c4567b31deabdb75ef17698 AS build
 RUN apk add build-base git
 WORKDIR /src
 COPY . .
