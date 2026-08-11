@@ -353,6 +353,9 @@
             /></small>
           </div>
           <div class="text-break line-clamp-3">{{ item.title || $t("untitled") }}</div>
+          <div v-for="media in (item.media_links || []).filter(l => l.type === 'image').slice(0, 1)">
+            <img :src="media.url" loading="lazy" referrerpolicy="no-referrer" style="width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover;">
+          </div>
         </div>
         <div class="text-center my-3" v-if="itemsHasMore">
           <span class="c-spinner"></span>
