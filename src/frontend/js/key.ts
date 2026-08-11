@@ -94,6 +94,8 @@ export function setupKeybindings(vm: InstanceType<typeof App>) {
     h: shortcutFunctions.previousFeed,
     f: shortcutFunctions.scrollForward,
     b: shortcutFunctions.scrollBackward,
+    m: shortcutFunctions.scrollForward, // Key below J.
+    ",": shortcutFunctions.scrollBackward, // Key below k.
     q: shortcutFunctions.closeItem,
     "?": shortcutFunctions.showShortcuts,
     "1": shortcutFunctions.showUnread,
