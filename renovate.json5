@@ -7,6 +7,9 @@
   "gomod": {
     "enabled": false,
   },
+  "npm": {
+    "enabled": false,
+  },
   "packageRules": [
     // Group all GitHub actions updates in the same PR.
     {
