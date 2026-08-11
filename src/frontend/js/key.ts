@@ -58,10 +58,10 @@ export function setupKeybindings(vm: InstanceType<typeof App>) {
       vm.navigateToFeed(-1);
     },
     scrollForward() {
-      helperFunctions.scrollContent(+1);
+      helperFunctions.scrollContent(+0.6);
     },
     scrollBackward() {
-      helperFunctions.scrollContent(-1);
+      helperFunctions.scrollContent(-0.6);
     },
     closeItem() {
       vm.itemSelected = null;
