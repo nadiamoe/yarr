@@ -467,7 +467,9 @@
         :style="{ 'font-size': theme.size + 'rem' }">
         <div class="content-wrapper">
           <h1>
-            <b>{{ itemSelectedDetails.title || $t("untitled") }}</b>
+            <a referrerpolicy="no-referrer" target="_blank" :href="itemSelectedDetails.link" style="text-decoration: none;">
+              <b>{{ itemSelectedDetails.title || $t("untitled") }}</b>
+            </a>
           </h1>
           <div class="opacity-50">
             <div>
