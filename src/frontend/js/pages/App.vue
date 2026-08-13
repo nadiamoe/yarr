@@ -470,7 +470,7 @@
         :style="{ 'font-size': theme.size + 'rem' }">
         <div class="content-wrapper">
           <h1>
-            <a referrerpolicy="no-referrer" target="_blank" :href="itemSelectedDetails.link" style="text-decoration: none;">
+            <a referrerpolicy="no-referrer" target="_blank" :href="itemSelectedDetails.link" style="color: inherit; text-decoration: none;">
               <b>{{ itemSelectedDetails.title || $t("untitled") }}</b>
             </a>
           </h1>
